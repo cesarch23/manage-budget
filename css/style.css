@@ -1,0 +1,247 @@
+:root {
+    --color-gray: #d2d2d2;
+    --color-white: #fff;
+    --color-dark: #2d2d2d;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  max-height: 100vh;
+  display: grid;
+  place-content: center;
+  font-family: sans-serif;
+}
+.alert-danger, .alert-success, .alert-warning {
+    padding: .8rem 1.6rem;
+    font-size: 1.6rem;
+    border-radius: .4rem;
+}
+.alert-danger{
+    background-color: hsla(358, 75%, 59%, 0.157);
+    color: hsl(4, 90%, 75%);
+    
+}
+.alert-success{
+    background-color: hsl(169, 79%, 9%);
+    color: hsl(169, 52%, 49%);
+}
+.alert-warning{
+    background-color: hsla(44, 84%, 80%, 0.071);
+    color: hsl(42, 72%, 50%);
+}
+.background {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-content: center;
+  /* background-color: #161616;
+  background-image: radial-gradient(
+    ellipse 40% 40% at 50% -20%,
+    rgba(102, 52, 239, 0.3),
+    rgba(102, 52, 239, 0)
+  ); */
+  background-color: #000000;
+}
+
+.main {
+    background-color: hsl(0, 0%, 0%);
+  color: var(--color-white);
+  padding: 3.2rem 6.4rem;
+  border-radius: 1.6rem;
+  & .main__title {
+    font-size: 5.6rem;
+    font-weight: 600;
+    padding-bottom: 2.4rem;
+    background: linear-gradient(to top, #c7d2fe, #8778f978);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-align: center;
+    color: transparent;
+  }
+  & .main__content {
+    display: flex;
+    gap: 6.4rem;
+   
+  }
+  @media screen and (max-width: 768px) {
+    & .main__content {
+      flex-direction: column;
+      gap: 3.2rem;
+    }
+    
+  }
+  & .bills {
+    & .bills__header {
+      font-size: 2.4rem;
+      padding-bottom: 1.6rem;
+      font-weight: 400;
+      color: hsla(0, 0%, 100%, 0.78);
+    }
+    & .bills-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      & .bills-form__field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+
+        & label {
+          font-size: 1.6rem;
+          font-weight: 400;
+          color: hsla(0, 0%, 100%, 0.671);
+        }
+
+        & .bills-form__control {
+          height: 3rem;  
+          width: 100%;  
+          cursor: default;  
+          border-radius: 0.4rem;  
+          border: 0.1rem solid var(--color-dark);  
+          background-color: #1a1a1a;  
+          padding: 0.4rem;  
+          color: #e5e5e5;  
+          transition: border-color 500ms, box-shadow 500ms;  
+        }
+        & .bills-form__control::placeholder {
+          user-select: none;  
+          color: #737373;  
+        }
+        & .bills-form__control:focus {
+          border-color: #8678f9;  
+          box-shadow: 0 0 5px 2px rgba(134, 120, 249, 0.5);
+          outline: none; 
+        }
+      }
+
+      & .bills-form__submitbtn:hover {
+        cursor: pointer;
+    }
+    & .bills-form__submitbtn {
+        overflow: hidden;
+        font-size: 1.6rem;
+        font-weight: 500;
+
+        position: relative;
+        padding: 0.8rem 1.6rem;
+
+        border-radius: 0.4rem;  
+        border: 1px solid var(--color-dark);  
+        background: linear-gradient(
+          to right,
+          #1a1a1a,
+          #0f0f0f
+        );  
+
+        color: hsla(0, 0%, 100%, 0.9);  
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        transition: border-color 500ms, box-shadow 500ms;  
+        outline: none;  
+      }
+    & .bills-form__submitbtn:disabled {
+        cursor: not-allowed;
+        opacity: 0.3;
+
+    }
+    & .bills-form__submitbtn::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1),
+          transparent
+        );
+        transition: opacity 300ms, transform 300ms;
+        opacity: 0;
+        pointer-events: none;
+      }
+    & .bills-form__submitbtn:hover::before,
+    & .bills-form__submitbtn:focus::before {
+        opacity: 1;
+        transform: scale(2);
+      }
+    }
+  }
+
+  & .my-expenses {
+    & .my-expenses__title {
+      font-size: 2.4rem;
+      padding-bottom: 1.6rem;
+      font-weight: 400;
+      color: hsla(0, 0%, 100%, 0.78);
+    }
+
+    & .my-expenses__list {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 1.6rem;
+      font-size: 1.6rem;
+    }
+
+    & .my-expenses__list-item {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 3.2rem;
+      border: 0.1rem solid var(--color-dark);
+      padding: 0.4rem 0.8rem;
+      color: #ffffff7c;
+      & .my-expenses__list-item-qty {
+        color: var(--color-gray);
+      }
+      & .delete-button {
+        cursor: pointer;
+        padding: 0.4rem 0.8rem;
+        border-radius: 0.4rem;
+        color: var(--color-white);
+        border: none;
+        background-color:hsla(358, 75%, 30%, 0.624); 
+        transition: background-color 500ms, color 500ms;
+      }
+      & .delete-button:hover {
+        background-color: hsl(358, 75%, 30%);
+      }
+    }
+    & .my-expenses__list-item:first-child {
+      border-top-left-radius: 0.4rem;
+      border-top-right-radius: 0.4rem;
+    }
+    & .my-expenses__list-item:last-child {
+      border-bottom-left-radius: 0.4rem;
+      border-bottom-right-radius: 0.4rem;
+    }
+
+    & .my-expenses__budget {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+
+      & .alert {
+        width: 100%;
+        padding: 0.8rem 1.6rem;
+
+        font-size: 1.6rem;
+        border-radius: 0.4rem;
+        border: 0.1rem solid var(--color-dark);
+      }
+
+      & .my-expenses__alert-budget {
+        background-color: #0d2745;
+        color: hsl(212, 94%, 60%);
+      }
+    }
+  }
+}

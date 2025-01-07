@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Gasto Semanal</title>
+
+</head>
+
+<body>
+    <div class="background">
+        <main class="main">
+            <h1 class="main__title">Gasto Semanal</h1>
+            <div class="main__content">
+                <div class="bills">
+                    <h2 class="bills__header">Añade tus gastos aqui</h2>
+                    <form class="bills-form" id="add-budget" action="#">
+                        <div class="bills-form__field">
+                            <label for="gasto">Gasto:</label>
+                            <input type="text" class="bills-form__control" id="expense" placeholder="Nombre Gasto">
+                        </div>
+                        <div class="bills-form__field">
+                            <label for="cantidad">Cantidad:</label>
+                            <input type="text" class="bills-form__control" id="quantity" placeholder="Cantidad en $">
+                        </div>
+                        <button type="submit" class="bills-form__submitbtn">Agregar</button>
+                    </form>
+
+                </div>
+                <div class="my-expenses">
+                    <h2 class="my-expenses__title">Listado de gastos</h2>
+                    <div id="budget">
+                        <ul class="my-expenses__list">
+                        </ul>
+                    </div>
+                    <div id="presupuesto" class="my-expenses__budget">
+                        <div class="my-expenses__alert-budget alert">
+                            <p>Presupuesto: $ <span id="total"></span> </p>
+                        </div>
+                        <div class=" restante  alert-success">
+                            <p>Restante: $ <span id="residual"></span></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>
