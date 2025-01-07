@@ -95,8 +95,7 @@ class UI {
             residualElement.classList.add('alert-warning')
             return;
         }
-        residualElement.classList.remove('alert-danger')
-        residualElement.classList.remove('alert-warning')
+        residualElement.classList.remove('alert-danger','alert-warning')
         residualElement.classList.add('alert-success')
     }
 }
